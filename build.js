@@ -119,6 +119,20 @@ const articleTemplate = `
 
 
 async function buildSite() {
+  const BASE_URL = 'https://techassesor.vercel.app';
+
+  const toAbsolute = (p) => {
+    const assetPath = p.trim().replace(/^\/?public\//, '');
+    return `${BASE_URL}/${assetPath.replace(/^\/?/, '')}`;
+  };
+
+  const finalizeAndWriteHtml = async (html, outputPath) => {
+    const finalHtml = html.replace(/(src|href)="(\/?(?:public\/)?(?:images|styles|script)[^\"]*|script\.js)"/g, (match, attr, assetPath) => {
+        return `${attr}="${toAbsolute(assetPath)}"`;
+    });
+    await fs.writeFile(outputPath, finalHtml);
+  };
+
   console.log('🚀 Iniciando compilación del sitio estático...');
 
   try {
@@ -126,25 +140,7 @@ async function buildSite() {
     await fs.ensureDir(PATHS.DIST);
     await fs.emptyDir(PATHS.DIST);
 
-    // Helper to ensure image and asset paths are absolute from site root
-    const toAbsolute = (p) => {
-      if (typeof p !== 'string' || !p) return p;
-      let path = p;
-      if (path.startsWith('public/')) {
-        path = path.substring('public/'.length);
-      }
-      return `/${path.replace(/^\/?/, '')}`;
-    };
 
-    const processHtmlAssets = (html) => {
-      // This regex finds src or href attributes that point to the public folder.
-      // It handles paths that may or may not start with a slash.
-      const assetRegex = /(src|href)="\/?(public(\/|\\)[^\"]+)"/g;
-      return html.replace(assetRegex, (match, attr, p) => {
-        const absolutePath = toAbsolute(p);
-        return `${attr}="${absolutePath}"`;
-      });
-    };
 
     console.log(`🎨 Copiando assets estáticos...`);
     if (await fs.pathExists(PATHS.PUBLIC)) {
@@ -176,12 +172,13 @@ async function buildSite() {
           .replace(/{{RAW_DATE}}/g, attributes.date)
           .replace(/{{DATE}}/g, formattedDate)
           .replace(/{{AUTHOR}}/g, attributes.author)
-          .replace(/{{FEATURED_IMAGE}}/g, toAbsolute(attributes.featuredImage))
           .replace(/{{CATEGORY}}/g, attributes.category || 'Artículo')
+          .replace(/{{FEATURED_IMAGE}}/g, attributes.featuredImage) // Use raw path, it will be replaced by finalizeAndWriteHtml
           .replace(/{{CONTENT}}/g, contentHtml);
 
         const outputPath = path.join(PATHS.DIST_ARTICLES, `${slug}.html`);
-        await fs.writeFile(outputPath, pageHtml);
+        // Apply the final path correction to the generated article HTML
+        await finalizeAndWriteHtml(pageHtml, outputPath);
 
         articlesData.push({
           ...attributes,
@@ -198,7 +195,7 @@ async function buildSite() {
       .map(article => `
         <article class="blog-card">
           <a href="${article.url}" class="card-link">
-            <img src="${toAbsolute(article.featuredImage)}" alt="Imagen destacada para ${article.title}" class="card-image">
+            <img src="${article.featuredImage}" alt="Imagen destacada para ${article.title}" class="card-image">
             <div class="card-content">
               <span class="card-category">${article.category}</span>
               <h2 class="card-title">${article.title}</h2>
@@ -215,8 +212,8 @@ async function buildSite() {
       `).join('');
 
     let blogIndexHtml = blogTemplate.replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList);
-    blogIndexHtml = processHtmlAssets(blogIndexHtml);
-    await fs.writeFile(path.join(PATHS.DIST, 'blog.html'), blogIndexHtml);
+    // Final pass to correct any remaining relative paths to absolute URLs
+    await finalizeAndWriteHtml(blogIndexHtml, path.join(PATHS.DIST, 'blog.html'));
     
     console.log(`🏠 Procesando la página de inicio: index.html...`);
     let indexHtml = await fs.readFile('index.html', 'utf-8');
@@ -226,7 +223,7 @@ async function buildSite() {
       const latestArticleHtml = `
       <a href="${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
           <div class="md:w-1/3">
-              <img class="h-48 w-full object-cover md:h-full" src="${toAbsolute(latestArticle.featuredImage)}" alt="Imagen para ${latestArticle.title}">
+              <img class="h-48 w-full object-cover md:h-full" src="${latestArticle.featuredImage}" alt="Imagen para ${latestArticle.title}">
           </div>
           <div class="p-8 md:w-2/3 flex flex-col justify-center">
               <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">${latestArticle.category}</div>
@@ -243,8 +240,7 @@ async function buildSite() {
       indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, '<p class="text-center text-slate-500">No hay artículos disponibles en este momento.</p>');
     }
 
-    indexHtml = processHtmlAssets(indexHtml);
-    await fs.writeFile(path.join(PATHS.DIST, 'index.html'), indexHtml);
+    await finalizeAndWriteHtml(indexHtml, path.join(PATHS.DIST, 'index.html'));
 
     console.log('🔧 Inyectando variables de entorno en script.js...');
     const scriptPath = path.join(PATHS.DIST, 'script.js');
