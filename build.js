@@ -128,15 +128,27 @@ async function buildSite() {
 
     // Helper to ensure image and asset paths are absolute from site root
     const toAbsolute = (p) => {
-      if (!p || typeof p !== 'string') return p;
-      // Remove 'public/' prefix if it exists, then ensure it's a root-relative path
-      const cleanedPath = p.startsWith('public/') ? p.substring('public/'.length) : p;
-      return cleanedPath.startsWith('/') ? cleanedPath : `/${cleanedPath.replace(/^\.?\/*/, '')}`;
+      if (typeof p !== 'string' || !p) return p;
+      let path = p;
+      if (path.startsWith('public/')) {
+        path = path.substring('public/'.length);
+      }
+      return `/${path.replace(/^\/?/, '')}`;
+    };
+
+    const processHtmlAssets = (html) => {
+      // This regex finds src or href attributes that point to the public folder.
+      // It handles paths that may or may not start with a slash.
+      const assetRegex = /(src|href)="\/?(public(\/|\\)[^\"]+)"/g;
+      return html.replace(assetRegex, (match, attr, p) => {
+        const absolutePath = toAbsolute(p);
+        return `${attr}="${absolutePath}"`;
+      });
     };
 
     console.log(`🎨 Copiando assets estáticos...`);
     if (await fs.pathExists(PATHS.PUBLIC)) {
-        await fs.copy(PATHS.PUBLIC, path.join(PATHS.DIST, 'public'));
+        await fs.copy(PATHS.PUBLIC, PATHS.DIST);
     }
     if (await fs.pathExists(PATHS.STYLES)) {
         await fs.copy(PATHS.STYLES, path.join(PATHS.DIST, 'styles'));
@@ -202,7 +214,8 @@ async function buildSite() {
         </article>
       `).join('');
 
-    const blogIndexHtml = blogTemplate.replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList);
+    let blogIndexHtml = blogTemplate.replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList);
+    blogIndexHtml = processHtmlAssets(blogIndexHtml);
     await fs.writeFile(path.join(PATHS.DIST, 'blog.html'), blogIndexHtml);
     
     console.log(`🏠 Procesando la página de inicio: index.html...`);
@@ -230,10 +243,11 @@ async function buildSite() {
       indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, '<p class="text-center text-slate-500">No hay artículos disponibles en este momento.</p>');
     }
 
+    indexHtml = processHtmlAssets(indexHtml);
     await fs.writeFile(path.join(PATHS.DIST, 'index.html'), indexHtml);
 
     console.log('🔧 Inyectando variables de entorno en script.js...');
-    const scriptPath = path.join(PATHS.DIST, 'public', 'script.js');
+    const scriptPath = path.join(PATHS.DIST, 'script.js');
     let scriptContent = await fs.readFile(scriptPath, 'utf-8');
 
     // process.env.N8N_WEBHOOK_URL será proporcionado por Vercel
