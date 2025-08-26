@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
-    const N8N_WEBHOOK_URL = 'https://example.com/n8n-webhook-url'; // <-- TODO: Replace with your actual n8n webhook URL
+    const N8N_WEBHOOK_URL = '%%N8N_WEBHOOK_URL%%'; // <-- TODO: Replace with your actual n8n webhook URL
 
     const chatContainer = document.getElementById('chat-widget-container');
     const triggerButtons = document.querySelectorAll('.chat-trigger');
