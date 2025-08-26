@@ -23,6 +23,38 @@ const blogTemplate = `
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <style type="text/tailwindcss">
+      .blog-card {
+        @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+      }
+      .card-link {
+        @apply block;
+      }
+      .card-image {
+        @apply w-full h-48 object-cover;
+      }
+      .card-content {
+        @apply p-6;
+      }
+      .card-category {
+        @apply block text-sm font-semibold text-blue-600 uppercase tracking-wide;
+      }
+      .card-title {
+        @apply mt-2 text-xl font-bold text-slate-900 leading-tight;
+      }
+      .card-summary {
+        @apply mt-2 text-slate-600 text-base;
+      }
+      .card-footer {
+        @apply mt-4 flex items-center justify-between text-sm text-slate-500;
+      }
+      .card-author {
+        @apply font-medium;
+      }
+      .card-date {
+        @apply text-right;
+      }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
@@ -45,8 +77,15 @@ const blogTemplate = `
             <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Nuestro Blog</h1>
             <p class="text-lg text-slate-600 mt-2">Guías de compra, análisis y las últimas noticias del sector.</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- ARTICLE_GRID_PLACEHOLDER -->
+        <div class="lg:grid lg:grid-cols-4 lg:gap-12">
+            <div class="lg:col-span-3">
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <!-- ARTICLE_GRID_PLACEHOLDER -->
+                </div>
+            </div>
+            <aside class="lg:col-span-1 mt-12 lg:mt-0">
+                <!-- SIDEBAR_PLACEHOLDER -->
+            </aside>
         </div>
     </main>
     <footer class="bg-white border-t border-slate-200 mt-16">
@@ -189,8 +228,32 @@ async function buildSite() {
     }
 
     articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
-    
+
     console.log(`📚 Generando la página principal del blog: blog.html...`);
+
+    const articlesByDate = articlesData.reduce((acc, article) => {
+      const date = new Date(article.date);
+      const year = date.getFullYear();
+      const monthName = date.toLocaleString('es-ES', { month: 'long' });
+      const monthKey = `${monthName.charAt(0).toUpperCase() + monthName.slice(1)} ${year}`;
+
+      if (!acc[monthKey]) {
+        acc[monthKey] = [];
+      }
+      acc[monthKey].push(article);
+      return acc;
+    }, {});
+
+    let sidebarHtml = '<h3 class="text-lg font-bold text-slate-900 mb-4">Artículos por fecha</h3><div class="space-y-6">';
+    for (const monthKey in articlesByDate) {
+      sidebarHtml += `<div><h4 class="font-semibold text-slate-800 text-base mb-2">${monthKey}</h4><ul class="space-y-2">`;
+      articlesByDate[monthKey].forEach(article => {
+        sidebarHtml += `<li><a href="${article.url}" class="text-sm text-slate-600 hover:text-blue-600 hover:underline">${article.title}</a></li>`;
+      });
+      sidebarHtml += '</ul></div>';
+    }
+    sidebarHtml += '</div>';
+
     const articlesHtmlList = articlesData
       .map(article => `
         <article class="blog-card">
@@ -211,8 +274,10 @@ async function buildSite() {
         </article>
       `).join('');
 
-    let blogIndexHtml = blogTemplate.replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList);
-    // Final pass to correct any remaining relative paths to absolute URLs
+    let blogIndexHtml = blogTemplate
+      .replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList)
+      .replace('<!-- SIDEBAR_PLACEHOLDER -->', sidebarHtml);
+
     await finalizeAndWriteHtml(blogIndexHtml, path.join(PATHS.DIST, 'blog.html'));
     
     console.log(`🏠 Procesando la página de inicio: index.html...`);

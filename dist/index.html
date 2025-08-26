@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechAsesor - Tu Asesor Tecnológico Personal</title>
+    <meta name="description" content="Encuentra el producto perfecto sin esfuerzo. Chatea con nuestra IA experta y recibe recomendaciones 100% personalizadas.">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@0.472.0"></script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+<meta name="description" content="Asesor tecnológico personal: recomendaciones de productos por IA.">
+<meta property="og:title" content="TechAsesor - Tu Asesor Tecnológico Personal">
+<meta property="og:description" content="Encuentra el producto perfecto con ayuda de IA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techassesor.vercel.app/">
+<meta property="og:image" content="https://techassesor.vercel.app/og-image.png">
+
+<style type="text/tailwindcss">
+.blog-card { @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1; }
+.card-link { @apply block; }
+.card-image { @apply w-full h-48 object-cover; }
+.card-content { @apply p-6; }
+.card-category { @apply block text-sm font-semibold text-blue-600 uppercase tracking-wide; }
+.card-title { @apply mt-2 text-xl font-bold text-slate-900 leading-tight; }
+.card-summary { @apply mt-2 text-slate-600 text-base; }
+.card-footer { @apply mt-4 flex items-center justify-between text-sm text-slate-500; }
+.card-author { @apply font-medium; }
+.card-date { @apply text-right; }
+#chat-widget { @apply fixed bottom-0 right-0 sm:bottom-8 sm:right-8 m-0 sm:m-4 w-full h-full sm:w-[400px] sm:h-[600px] bg-white rounded-none sm:rounded-2xl shadow-2xl flex flex-col transition-transform duration-300 ease-in-out z-50; transform: translateY(100%); }
+#chat-widget.active { transform: translateY(0); }
+#chat-header { @apply flex items-center justify-between p-4 bg-slate-50 border-b border-slate-200 rounded-t-none sm:rounded-t-2xl; }
+#chat-messages { @apply flex-1 p-4 overflow-y-auto space-y-4; }
+.chat-message { @apply flex items-end max-w-xs; }
+.chat-bubble { @apply px-4 py-2 rounded-2xl; }
+.user-message { @apply ml-auto; }
+.user-message .chat-bubble { @apply bg-blue-600 text-white rounded-br-lg; }
+.bot-message { @apply mr-auto; }
+.bot-message .chat-bubble { @apply bg-slate-100 text-slate-800 rounded-bl-lg; }
+#chat-form { @apply p-4 border-t border-slate-200 bg-white rounded-b-none sm:rounded-b-2xl; }
+#chat-input { @apply w-full bg-slate-100 border-transparent rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow; }
+.typing-indicator { @apply relative; }
+.typing-indicator::after { content: ' ...'; @apply text-slate-400; }
+</style>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="font-semibold text-blue-600">Inicio</a>
+                <a href="blog.html" class="text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
+            </nav>
+            <button class="chat-trigger hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+                Hablar con un experto
+            </button>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 md:py-32 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+                    Tu Asesor Tecnológico Personal
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                    Encuentra el producto perfecto sin esfuerzo. Chatea con nuestra IA experta y recibe recomendaciones 100% personalizadas a tu medida.
+                </p>
+                <button class="chat-trigger bg-blue-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl text-lg">
+                    Hablar con un experto
+                </button>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Tan fácil como charlar con un amigo</h2>
+                    <p class="text-slate-600 mt-2">Nuestro proceso simplificado en tres pasos.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="p-8 bg-slate-50 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105">
+                        <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="message-square-text" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">1. Describe tus necesidades</h3>
+                        <p class="text-slate-600">Cuéntanos qué buscas, para qué lo necesitas y cuál es tu presupuesto.</p>
+                    </div>
+                    <div class="p-8 bg-slate-50 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105">
+                         <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="cpu" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">2. Analizamos miles de opciones</h3>
+                        <p class="text-slate-600">Nuestra IA compara al instante miles de productos, especificaciones y reseñas.</p>
+                    </div>
+                    <div class="p-8 bg-slate-50 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105">
+                         <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">3. Recibe tu recomendación</h3>
+                        <p class="text-slate-600">Obtén la sugerencia ideal con un análisis claro del porqué es la mejor para ti.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">De nuestro Blog</h2>
+                    <p class="text-slate-600 mt-2">Consejos, guías y noticias del mundo de la tecnología.</p>
+                </div>
+                
+      <a href="/articles/portatil-2025.html" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
+          <div class="md:w-1/3">
+              <img class="h-48 w-full object-cover md:h-full" src="https://techassesor.vercel.app/images/futuristic-laptop-workstation.png" alt="Imagen para Cómo Elegir el Portátil Perfecto en 2025">
+          </div>
+          <div class="p-8 md:w-2/3 flex flex-col justify-center">
+              <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">GUÍA DE COMPRA</div>
+              <h3 class="mt-1 text-2xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Cómo Elegir el Portátil Perfecto en 2025</h3>
+              <p class="mt-2 text-slate-600">Nuestra guía desmitifica la compra de un portátil en 2025, guiándote a través de las nuevas tecnologías como CPUs con IA y pantallas avanzadas. Aprende a identificar tus necesidades y a elegir el dispositivo perfecto sin sentirte abrumado por los datos técnicos.</p>
+              <div class="mt-4 text-sm text-slate-500">
+                  <span>Por Equipo TechAsesor</span> &bull;
+                  <time datetime="2025-08-26">26 de agosto de 2025</time>
+              </div>
+          </div>
+      </a>
+                <div class="mt-12 text-center">
+                     <a href="blog.html" class="font-semibold text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center">
+                        Ver todos los artículos <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            &copy; 2025 TechAsesor. Todos los derechos reservados.
+        </div>
+    </footer>
+    
+    <div id="chat-widget-container"></div>
+
+    <script type="module" src="https://techassesor.vercel.app/script.js"></script>
+</body>
+</html>
