@@ -1,0 +1,16 @@
+{
+  "name": "techasesor-website",
+  "version": "1.0.0",
+  "description": "Sitio web estático para TechAsesor con CMS basado en Markdown.",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "Equipo TechAsesor",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "front-matter": "^4.0.2",
+    "marked": "^12.0.2"
+  }
+}

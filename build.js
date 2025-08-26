@@ -1,0 +1,234 @@
+const fs = require('fs-extra');
+const path = require('path');
+const frontMatter = require('front-matter');
+const { marked } = require('marked');
+
+const PATHS = {
+  ARTICLES: path.join(__dirname, 'articles'),
+  PUBLIC: path.join(__dirname, 'public'),
+  DIST: path.join(__dirname, 'dist'),
+  DIST_ARTICLES: path.join(__dirname, 'dist', 'articles'),
+  STYLES: path.join(__dirname, 'styles'),
+};
+
+const blogTemplate = `
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TechAsesor</title>
+    <meta name="description" content="Consejos, guías y noticias del mundo de la tecnología de la mano de expertos.">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="/blog.html" class="font-semibold text-blue-600">Blog</a>
+            </nav>
+            <a href="/index.html#chat" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+                Hablar con un experto
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Nuestro Blog</h1>
+            <p class="text-lg text-slate-600 mt-2">Guías de compra, análisis y las últimas noticias del sector.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- ARTICLE_GRID_PLACEHOLDER -->
+        </div>
+    </main>
+    <footer class="bg-white border-t border-slate-200 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            &copy; ${new Date().getFullYear()} TechAsesor. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+</body>
+</html>
+`;
+
+const articleTemplate = `
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - TechAsesor</title>
+    <meta name="description" content="{{SUMMARY}}">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body class="bg-white text-slate-800 font-sans">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="/blog.html" class="text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
+            </nav>
+        </div>
+    </header>
+    <main class="py-16">
+        <article class="container mx-auto px-6 max-w-4xl">
+            <header class="mb-12">
+                <div class="text-center">
+                    <p class="text-blue-600 font-semibold uppercase">{{CATEGORY}}</p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mt-2">{{TITLE}}</h1>
+                    <div class="mt-4 text-slate-500">
+                        <span>Por {{AUTHOR}}</span> &bull; <time datetime="{{RAW_DATE}}">{{DATE}}</time>
+                    </div>
+                </div>
+                <img src="{{FEATURED_IMAGE}}" alt="Imagen destacada para {{TITLE}}" class="mt-8 rounded-xl shadow-lg w-full h-auto aspect-video object-cover">
+            </header>
+            <div class="prose prose-slate lg:prose-xl max-w-none mx-auto">
+                {{CONTENT}}
+            </div>
+        </article>
+    </main>
+    <footer class="bg-slate-50 border-t border-slate-200 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            &copy; ${new Date().getFullYear()} TechAsesor. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+</body>
+</html>
+`;
+
+
+async function buildSite() {
+  console.log('🚀 Iniciando compilación del sitio estático...');
+
+  try {
+    console.log(`🧹 Limpiando el directorio de salida...`);
+    await fs.ensureDir(PATHS.DIST);
+    await fs.emptyDir(PATHS.DIST);
+
+    console.log(`🎨 Copiando assets estáticos...`);
+    if (await fs.pathExists(PATHS.PUBLIC)) {
+        await fs.copy(PATHS.PUBLIC, path.join(PATHS.DIST, 'public'));
+    }
+    if (await fs.pathExists(PATHS.STYLES)) {
+        await fs.copy(PATHS.STYLES, path.join(PATHS.DIST, 'styles'));
+    }
+
+    console.log(`📝 Procesando artículos desde '${PATHS.ARTICLES}'...`);
+    await fs.ensureDir(PATHS.DIST_ARTICLES);
+
+    const articleFiles = await fs.readdir(PATHS.ARTICLES);
+    const articlesData = [];
+
+    for (const file of articleFiles) {
+      if (path.extname(file) === '.md') {
+        const slug = path.basename(file, '.md');
+        const fileContent = await fs.readFile(path.join(PATHS.ARTICLES, file), 'utf-8');
+
+        const { attributes, body } = frontMatter(fileContent);
+        const contentHtml = marked.parse(body);
+        
+        const formattedDate = new Date(attributes.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        const pageHtml = articleTemplate
+          .replace(/{{TITLE}}/g, attributes.title)
+          .replace(/{{SUMMARY}}/g, attributes.summary)
+          .replace(/{{RAW_DATE}}/g, attributes.date)
+          .replace(/{{DATE}}/g, formattedDate)
+          .replace(/{{AUTHOR}}/g, attributes.author)
+          .replace(/{{FEATURED_IMAGE}}/g, `.${attributes.featuredImage}`)
+          .replace(/{{CATEGORY}}/g, attributes.category || 'Artículo')
+          .replace(/{{CONTENT}}/g, contentHtml);
+
+        const outputPath = path.join(PATHS.DIST_ARTICLES, `${slug}.html`);
+        await fs.writeFile(outputPath, pageHtml);
+
+        articlesData.push({
+          ...attributes,
+          url: `/articles/${slug}.html`,
+        });
+        console.log(`  -> Artículo generado: ${slug}.html`);
+      }
+    }
+
+    articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    console.log(`📚 Generando la página principal del blog: blog.html...`);
+    const articlesHtmlList = articlesData
+      .map(article => `
+        <article class="blog-card">
+          <a href=".${article.url}" class="card-link">
+            <img src=".${article.featuredImage}" alt="Imagen destacada para ${article.title}" class="card-image">
+            <div class="card-content">
+              <span class="card-category">${article.category}</span>
+              <h2 class="card-title">${article.title}</h2>
+              <p class="card-summary">${article.summary}</p>
+              <div class="card-footer">
+                <span class="card-author">${article.author}</span>
+                <time datetime="${article.date}" class="card-date">
+                  ${new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+            </div>
+          </a>
+        </article>
+      `).join('');
+
+    const blogIndexHtml = blogTemplate.replace('<!-- ARTICLE_GRID_PLACEHOLDER -->', articlesHtmlList);
+    await fs.writeFile(path.join(PATHS.DIST, 'blog.html'), blogIndexHtml);
+    
+    console.log(`🏠 Procesando la página de inicio: index.html...`);
+    let indexHtml = await fs.readFile('index.html', 'utf-8');
+    const latestArticle = articlesData[0];
+
+    if (latestArticle) {
+      const latestArticleHtml = `
+      <a href=".${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
+          <div class="md:w-1/3">
+              <img class="h-48 w-full object-cover md:h-full" src=".${latestArticle.featuredImage}" alt="Imagen para ${latestArticle.title}">
+          </div>
+          <div class="p-8 md:w-2/3 flex flex-col justify-center">
+              <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">${latestArticle.category}</div>
+              <h3 class="mt-1 text-2xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">${latestArticle.title}</h3>
+              <p class="mt-2 text-slate-600">${latestArticle.summary}</p>
+              <div class="mt-4 text-sm text-slate-500">
+                  <span>Por ${latestArticle.author}</span> &bull;
+                  <time datetime="${latestArticle.date}">${new Date(latestArticle.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              </div>
+          </div>
+      </a>`;
+      indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, latestArticleHtml);
+    } else {
+      indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, '<p class="text-center text-slate-500">No hay artículos disponibles en este momento.</p>');
+    }
+
+    await fs.writeFile(path.join(PATHS.DIST, 'index.html'), indexHtml);
+
+    console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
+  } catch (error) {
+    console.error('❌ Error durante el proceso de compilación:', error);
+    process.exit(1);
+  }
+}
+
+buildSite();

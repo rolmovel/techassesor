@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TechAsesor</title>
+    <meta name="description" content="Consejos, guías y noticias del mundo de la tecnología de la mano de expertos.">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+            </nav>
+            <button class="chat-trigger hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+                Hablar con un experto
+            </button>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Nuestro Blog</h1>
+            <p class="text-lg text-slate-600 mt-2">Guías de compra, análisis y las últimas noticias del sector.</p>
+        </div>
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <article class="blog-card">
+              <a href="articles/portatil-2025.html" class="card-link">
+                <img src="https://r2.flowith.net/files/o/1756195117870-futuristic_laptop_workstation_index_1@1024x1024.png" alt="Imagen destacada para Cómo Elegir el Portátil Perfecto en 2025" class="card-image">
+                <div class="card-content">
+                  <span class="card-category">GUÍA DE COMPRA</span>
+                  <h2 class="card-title">Cómo Elegir el Portátil Perfecto en 2025</h2>
+                  <p class="card-summary">Nuestra guía desmitifica la compra de un portátil en 2025, guiándote a través de las nuevas tecnologías como CPUs con IA y pantallas avanzadas. Aprende a identificar tus necesidades y a elegir el dispositivo perfecto sin sentirte abrumado por los datos técnicos.</p>
+                  <div class="card-footer">
+                    <span class="card-author">Equipo TechAsesor</span>
+                    <time datetime="2025-08-26" class="card-date">
+                      26 de agosto de 2025
+                    </time>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Este es un marcador de posición para futuros artículos. -->
+            <!-- Para añadir más artículos, crea un archivo .md en la carpeta /articles y ejecuta 'node build.js' para regenerar el sitio. -->
+            
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            &copy; 2025 TechAsesor. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <div id="chat-widget-container"></div>
+
+    <script type="module" src="public/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+</body>
+</html>
+

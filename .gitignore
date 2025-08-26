@@ -1,0 +1,9 @@
+# Dependencias
+node_modules/
+
+# Construcción
+# (No ignoramos dist/ porque se pidió incluirlo en la estructura)
+
+# SO / Editor
+.DS_Store
+*.log
