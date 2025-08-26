@@ -224,6 +224,22 @@ async function buildSite() {
 
     await fs.writeFile(path.join(PATHS.DIST, 'index.html'), indexHtml);
 
+    console.log('🔧 Inyectando variables de entorno en script.js...');
+    const scriptPath = path.join(PATHS.DIST, 'public', 'script.js');
+    let scriptContent = await fs.readFile(scriptPath, 'utf-8');
+
+    // process.env.N8N_WEBHOOK_URL será proporcionado por Vercel
+    const webhookUrl = process.env.N8N_WEBHOOK_URL || ''; 
+
+    scriptContent = scriptContent.replace('%%N8N_WEBHOOK_URL%%', webhookUrl);
+    await fs.writeFile(scriptPath, scriptContent);
+
+    if (!webhookUrl) {
+      console.warn('  -> ⚠️ Advertencia: La variable N8N_WEBHOOK_URL no fue encontrada. El chat no funcionará.');
+    } else {
+      console.log('  -> ✅ Variable N8N_WEBHOOK_URL inyectada correctamente.');
+    }
+
     console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
   } catch (error) {
     console.error('❌ Error durante el proceso de compilación:', error);
