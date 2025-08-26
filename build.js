@@ -180,7 +180,7 @@ async function buildSite() {
     const articlesHtmlList = articlesData
       .map(article => `
         <article class="blog-card">
-          <a href=".${article.url}" class="card-link">
+          <a href="${article.url}" class="card-link">
             <img src="${toAbsolute(article.featuredImage)}" alt="Imagen destacada para ${article.title}" class="card-image">
             <div class="card-content">
               <span class="card-category">${article.category}</span>
@@ -206,7 +206,7 @@ async function buildSite() {
 
     if (latestArticle) {
       const latestArticleHtml = `
-      <a href=".${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
+      <a href="${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
           <div class="md:w-1/3">
               <img class="h-48 w-full object-cover md:h-full" src="${toAbsolute(latestArticle.featuredImage)}" alt="Imagen para ${latestArticle.title}">
           </div>
