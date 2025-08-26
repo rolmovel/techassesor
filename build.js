@@ -127,7 +127,12 @@ async function buildSite() {
     await fs.emptyDir(PATHS.DIST);
 
     // Helper to ensure image and asset paths are absolute from site root
-    const toAbsolute = (p) => p && typeof p === 'string' ? (p.startsWith('/') ? p : `/${p.replace(/^\.?\/*/, '')}`) : p;
+    const toAbsolute = (p) => {
+      if (!p || typeof p !== 'string') return p;
+      // Remove 'public/' prefix if it exists, then ensure it's a root-relative path
+      const cleanedPath = p.startsWith('public/') ? p.substring('public/'.length) : p;
+      return cleanedPath.startsWith('/') ? cleanedPath : `/${cleanedPath.replace(/^\.?\/*/, '')}`;
+    };
 
     console.log(`🎨 Copiando assets estáticos...`);
     if (await fs.pathExists(PATHS.PUBLIC)) {
