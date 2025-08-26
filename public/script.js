@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
 
-  const N8N_WEBHOOK_URL = 'https://example.com/n8n-webhook-url'; // TODO: sustituir por el real o proxy en Vercel
+  const API_URL = '/api/chat';
 
   const chatContainer = document.getElementById('chat-widget-container');
   const triggerButtons = document.querySelectorAll('.chat-trigger');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const typing = addMessage('Estoy analizando tu petición...', 'bot', true);
 
       try {
-        const res = await fetch(N8N_WEBHOOK_URL, {
+        const res = await fetch(API_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message })
