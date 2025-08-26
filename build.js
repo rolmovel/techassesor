@@ -126,6 +126,9 @@ async function buildSite() {
     await fs.ensureDir(PATHS.DIST);
     await fs.emptyDir(PATHS.DIST);
 
+    // Helper to ensure image and asset paths are absolute from site root
+    const toAbsolute = (p) => p && typeof p === 'string' ? (p.startsWith('/') ? p : `/${p.replace(/^\.?\/*/, '')}`) : p;
+
     console.log(`🎨 Copiando assets estáticos...`);
     if (await fs.pathExists(PATHS.PUBLIC)) {
         await fs.copy(PATHS.PUBLIC, path.join(PATHS.DIST, 'public'));
@@ -156,7 +159,7 @@ async function buildSite() {
           .replace(/{{RAW_DATE}}/g, attributes.date)
           .replace(/{{DATE}}/g, formattedDate)
           .replace(/{{AUTHOR}}/g, attributes.author)
-          .replace(/{{FEATURED_IMAGE}}/g, `.${attributes.featuredImage}`)
+          .replace(/{{FEATURED_IMAGE}}/g, toAbsolute(attributes.featuredImage))
           .replace(/{{CATEGORY}}/g, attributes.category || 'Artículo')
           .replace(/{{CONTENT}}/g, contentHtml);
 
@@ -178,7 +181,7 @@ async function buildSite() {
       .map(article => `
         <article class="blog-card">
           <a href=".${article.url}" class="card-link">
-            <img src=".${article.featuredImage}" alt="Imagen destacada para ${article.title}" class="card-image">
+            <img src="${toAbsolute(article.featuredImage)}" alt="Imagen destacada para ${article.title}" class="card-image">
             <div class="card-content">
               <span class="card-category">${article.category}</span>
               <h2 class="card-title">${article.title}</h2>
@@ -205,7 +208,7 @@ async function buildSite() {
       const latestArticleHtml = `
       <a href=".${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
           <div class="md:w-1/3">
-              <img class="h-48 w-full object-cover md:h-full" src=".${latestArticle.featuredImage}" alt="Imagen para ${latestArticle.title}">
+              <img class="h-48 w-full object-cover md:h-full" src="${toAbsolute(latestArticle.featuredImage)}" alt="Imagen para ${latestArticle.title}">
           </div>
           <div class="p-8 md:w-2/3 flex flex-col justify-center">
               <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">${latestArticle.category}</div>
