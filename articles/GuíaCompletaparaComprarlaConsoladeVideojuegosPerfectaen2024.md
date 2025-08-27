@@ -1,7 +1,7 @@
 ---
 title: "Guía Completa para Comprar la Consola de Videojuegos Perfecta"
 summary: "Descubre cómo elegir la consola de videojuegos ideal según tus gustos, presupuesto y estilo de juego con esta guía actualizada."
-date: "2024-06-22"
+date: "2025-06-22"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"
 featuredImage: "public/images/guia-compra-consolas-2024.png"
@@ -45,17 +45,44 @@ Cada plataforma tiene títulos exclusivos y estilos de juegos predominantes:
 ### El Jugador Casual y Familiar
 
 - **Nintendo Switch**: Su versatilidad para jugar en casa o fuera, juegos accesibles y contenido familiar la hacen ideal.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71n+F6bHXGL._AC_SX679_.jpg" alt="Nintendo Consola Switch" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Nintendo Consola Switch</h3>
+    <a href="https://amzn.to/4oUIzRd" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 - **Xbox Series S**: Buen punto de entrada con bajo costo y acceso a Game Pass.
 
 ### El Competitivo y Entusiasta
 
 - **PlayStation 5**: Gran potencia, exclusivos logrados y futuros lanzamientos esperados.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51NbBH89m1L._AC_SX679_.jpg" alt="Playstation 5 Consolar" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Playstation 5 Consola</h3>
+    <a href="https://amzn.to/41rX30O" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 - **Xbox Series X**: Potencia máxima, excelente en multijugador y retrocompatibilidad.
 
 ### El Gamer Portátil o en Movimiento
 
 - **Nintendo Switch OLED**: Pantalla de alta calidad y opción portátil.
 - Opciones complementarias: Teclado y mando adaptable en móviles, pero Switch es la consola dominante para este uso.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71eVf1+jn6L._AC_SX679_.jpg" alt="Nintendo Switch (versión OLED)" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Nintendo Switch (versión OLED)</h3>
+    <a href="https://amzn.to/45Y66rO" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ## Conclusión
 
