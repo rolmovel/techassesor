@@ -11,7 +11,6 @@ Comprar un portátil en 2025 puede parecer una tarea abrumadora. El mercado est�
 
 Esta guía está diseñada para desmitificar el proceso. En lugar de bombardearte con datos técnicos, te guiaremos a través de una serie de preguntas y análisis para que puedas identificar qué es lo que realmente necesitas. Al final, no solo entenderás los componentes, sino que tendrás la confianza para elegir el portátil perfecto *para ti*.
 
-![Persona analizando datos en un portátil futurista en un entorno de oficina moderno.](https://r2.flowith.net/files/o/1756195117870-futuristic_laptop_workstation_index_1@1024x1024.png)
 
 ---
 

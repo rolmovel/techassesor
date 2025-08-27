@@ -2,14 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{{TITLE}} - TechAsesor</title>
+    <title>{{TITLE}} - Triveo</title>
     <meta name="description" content="{{SUMMARY}}">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50">
-    <!-- Header (simplificado) -->
-    <header>...</header>
+    <!-- Header con logo -->
+    <header class="bg-white/80 border-b border-slate-200">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/index.html" class="inline-flex items-center" aria-label="Inicio">
+          <img src="/aimages/triveo-logo.png" alt="Triveo" class="h-8 w-auto" />
+        </a>
+      </div>
+    </header>
     <main class="py-16 md:py-24">
         <div class="container mx-auto px-6">
             <article class="prose prose-slate lg:prose-xl max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-md">
