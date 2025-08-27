@@ -59,7 +59,7 @@ const blogTemplate = `
 <body class="bg-slate-50 text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/index.html" class="inline-flex items-center" aria-label="Inicio"><img src="/images/triveo-logo.png" alt="Triveo" class="h-8 w-auto" /></a>
+            <a href="/index.html" class="inline-flex items-center" aria-label="Inicio"><img src="/images/triveo-logo-cropped.png" alt="Triveo" class="h-8 w-auto" /></a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
                 <a href="/blog.html" class="font-semibold text-blue-600">Blog</a>
