@@ -139,8 +139,8 @@ const articleTemplate = `
                 <img src="/images/triveo-logo-cropped.png" alt="Triveo" class="h-12 w-auto" />
             </a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
-                <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
+                <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="/blog.html" class="font-semibold text-blue-600">Blog</a>
             </nav>
             <button class="chat-trigger hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
                 Hablar con un experto
