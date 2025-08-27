@@ -26,15 +26,33 @@ La CPU es el motor de tu portátil. Determina la velocidad y la capacidad de res
 <div class="product-card">
   <img src="https://m.media-amazon.com/images/I/61kvh6gi+hL._AC_SX679_.jpg" alt="ASUS Zenbook A14 OLED" class="product-image">
   <div class="product-content">
-    <h3 class="product-title">Nombre del Producto</h3>
+    <h3 class="product-title">ASUS Zenbook A14 OLED</h3>
     <a href="https://amzn.to/4g1UsAU" target="_blank" rel="noopener noreferrer" class="product-button">
       Ver en Amazon
     </a>
   </div>
 </div>  
   - *Opción 2 (macOS):* Un **MacBook Air con chip M4** es tu mejor aliado.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71YMV41+tEL._AC_SX679_.jpg" alt="Apple 2025 MacBook Air de 13 Pulgadas con Chip M4" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Apple 2025 MacBook Air de 13 Pulgadas con Chip M4</h3>
+    <a href="https://amzn.to/3URfW9I" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>
 - **El Profesional Versátil:** Necesitas un equilibrio entre rendimiento, batería y compatibilidad para trabajar.
   - *Opción 1 (Intel):* Un ultraligero con **Intel Core Ultra 200U (Lunar Lake)** te dará eficiencia y la tranquilidad de la compatibilidad x86.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71V5-11a-kL._AC_SX679_.jpg" alt="Portátil ultraligero con Intel Core Ultra 200U" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Portátil ultraligero con Intel Core Ultra 200U</h3>
+    <a href="https://amzn.to/45EiUER" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>
 - **El Gamer o Creador de Contenido:** Buscas la máxima potencia sin compromisos.
   - *Opción 1 (Máximo rendimiento gaming):* Un portátil con **Intel Core Ultra 200HX** o **AMD Ryzen AI 9 HX 370**.
   - *Opción 2 (Creador de contenido en macOS):* Un **MacBook Pro con chip M4 Pro o M4 Max**.
