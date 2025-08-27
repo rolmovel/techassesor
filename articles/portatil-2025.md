@@ -3,7 +3,7 @@ title: 'Cómo Elegir el Portátil Perfecto en 2025'
 date: '2025-08-26'
 author: 'Equipo TechAsesor'
 summary: 'Nuestra guía desmitifica la compra de un portátil en 2025, guiándote a través de las nuevas tecnologías como CPUs con IA y pantallas avanzadas. Aprende a identificar tus necesidades y a elegir el dispositivo perfecto sin sentirte abrumado por los datos técnicos.'
-featuredImage: 'https://m.media-amazon.com/images/I/71YMV41+tEL._AC_SX679_.jpg'
+featuredImage: 'https://m.media-amazon.com/images/I/61F42+I6LgL._AC_SX522_.jpg'
 category: 'GUÍA DE COMPRA'
 ---
 
@@ -34,7 +34,7 @@ La CPU es el motor de tu portátil. Determina la velocidad y la capacidad de res
 </div>  
   - *Opción 2 (macOS):* Un **MacBook Air con chip M4** es tu mejor aliado.
 <div class="product-card">
-  <img src="https://m.media-amazon.com/images/I/71YMV41+tEL._AC_SX679_.jpg" alt="Apple 2025 MacBook Air de 13 Pulgadas con Chip M4" class="product-image">
+  <img src="https://m.media-amazon.com/images/I/61F42+I6LgL._AC_SX522_.jpg" alt="Apple 2025 MacBook Air de 13 Pulgadas con Chip M4" class="product-image">
   <div class="product-content">
     <h3 class="product-title">Apple 2025 MacBook Air de 13 Pulgadas con Chip M4</h3>
     <a href="https://amzn.to/3URfW9I" target="_blank" rel="noopener noreferrer" class="product-button">
@@ -45,7 +45,7 @@ La CPU es el motor de tu portátil. Determina la velocidad y la capacidad de res
 - **El Profesional Versátil:** Necesitas un equilibrio entre rendimiento, batería y compatibilidad para trabajar.
   - *Opción 1 (Intel):* Un ultraligero con **Intel Core Ultra 200U (Lunar Lake)** te dará eficiencia y la tranquilidad de la compatibilidad x86.
 <div class="product-card">
-  <img src="https://m.media-amazon.com/images/I/71V5-11a-kL._AC_SX679_.jpg" alt="Portátil ultraligero con Intel Core Ultra 200U" class="product-image">
+  <img src="https://m.media-amazon.com/images/I/612+k9wsLUL._AC_SX679_.jpg" alt="Portátil ultraligero con Intel Core Ultra 200U" class="product-image">
   <div class="product-content">
     <h3 class="product-title">Portátil ultraligero con Intel Core Ultra 200U</h3>
     <a href="https://amzn.to/45EiUER" target="_blank" rel="noopener noreferrer" class="product-button">
