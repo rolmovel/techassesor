@@ -135,11 +135,19 @@ const articleTemplate = `
 <body class="bg-white text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/index.html" class="inline-flex items-center" aria-label="Inicio"><img src="/images/triveo-logo-cropped.png" alt="Triveo" class="h-8 w-auto" /></a>
+            <a href="index.html" class="inline-flex items-center" aria-label="Inicio">
+                <img src="/images/triveo-logo-cropped.png" alt="Triveo" class="h-12 w-auto" />
+            </a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
-                <a href="/blog.html" class="text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
+                <a href="index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
             </nav>
+            <button class="chat-trigger hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+                Hablar con un experto
+            </button>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
     </header>
     <main class="py-16">
