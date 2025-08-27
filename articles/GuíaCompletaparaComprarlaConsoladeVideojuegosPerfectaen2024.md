@@ -4,7 +4,7 @@ summary: "Descubre cómo elegir la consola de videojuegos ideal según tus gusto
 date: "2025-06-22"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"
-featuredImage: "public/images/guia-compra-consolas-2024.png"
+featuredImage: "https://m.media-amazon.com/images/I/51NbBH89m1L._AC_SX679_.jpg"
 ---
 
 ## Encuentra la Consola de Videojuegos Ideal para Ti en 2024
