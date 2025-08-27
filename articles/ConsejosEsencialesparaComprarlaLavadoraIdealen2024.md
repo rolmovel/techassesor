@@ -4,7 +4,7 @@ summary: "Descubre los factores clave para elegir la lavadora perfecta según tu
 date: "2025-08-27"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"
-featuredImage: "public/images/consejos-compra-lavadoras.png"
+featuredImage: "https://m.media-amazon.com/images/I/7179BDWC1XL._AC_SX679_.jpg"
 ---
 
 ## Introducción
@@ -50,17 +50,42 @@ Ten en cuenta que elegir una capacidad adecuada evitará ciclos innecesarios y a
 
 - **Prioridades:** Lavados rápidos, tamaño compacto y buena eficiencia energética.
 - **Recomendación:** Una lavadora de carga frontal con capacidad entre 5 y 6 kg y programa rápido.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/7179BDWC1XL._AC_SX679_.jpg" alt="Cecotec Lavadora de Carga Frontal" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Cecotec Lavadora de Carga Frontal</h3>
+    <a href="https://amzn.to/46aI3He" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### La Familia Activa
 
 - **Prioridades:** Alta capacidad, durabilidad y programas especializados.
 - **Recomendación:** Lavadora con capacidad superior a 8 kg, con tecnologías antiarrugas y programas para ropa de niños o tejidos sensibles.
-
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71G60Wt91kL._AC_SX679_.jpg" alt="Cecotec Lavadora 8Kg Carga Frontal Bolero Dresscode" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Cecotec Lavadora 8Kg Carga Frontal Bolero Dresscode</h3>
+    <a href="https://amzn.to/45CKn9W" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 ### El Espacio Reducido
 
 - **Prioridades:** Dimensiones compactas y funcionalidad.
 - **Recomendación:** Lavadoras de carga superior o modelos slim con al menos 6-7 kg de capacidad.
-
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51VXJW+jI9L._AC_SY879_.jpg" alt="Midea Lavadora Carga Superior" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Midea Lavadora Carga Superior</h3>
+    <a href="https://amzn.to/47aFS7E" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 ### El Usuario Eco-Consciente
 
 - **Prioridades:** Máxima eficiencia energética y bajo consumo de agua.
