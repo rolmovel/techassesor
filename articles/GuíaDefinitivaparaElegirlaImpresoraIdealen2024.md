@@ -4,7 +4,7 @@ summary: "Descubre cómo elegir la impresora perfecta según tus necesidades, de
 date: "2024-06-24"
 author: "Equipo Triveo"
 category: "GUÍA DE COMPRA"
-featuredImage: "https://m.media-amazon.com/images/I/51NbBH89m1L._AC_SX679_.jpg"
+featuredImage: "https://m.media-amazon.com/images/I/8170H0F-qrL._AC_SX679_.jpg"
 ---
 
 ## Introducción
