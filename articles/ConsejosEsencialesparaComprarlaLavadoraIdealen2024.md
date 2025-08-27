@@ -2,7 +2,7 @@
 title: "Consejos Esenciales para Comprar la Lavadora Ideal"
 summary: "Descubre los factores clave para elegir la lavadora perfecta según tus necesidades, y optimiza tu inversión con estos prácticos consejos de compra."
 date: "2025-08-27"
-author: "Equipo TechAsesor"
+author: "Equipo Triveo"
 category: "GUÍA DE COMPRA"
 featuredImage: "https://m.media-amazon.com/images/I/7179BDWC1XL._AC_SX679_.jpg"
 ---

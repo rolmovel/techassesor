@@ -1,7 +1,7 @@
 ---
 title: 'Cómo Elegir el Portátil Perfecto en 2025'
 date: '2025-08-26'
-author: 'Equipo TechAsesor'
+author: 'Equipo Triveo'
 summary: 'Nuestra guía desmitifica la compra de un portátil en 2025, guiándote a través de las nuevas tecnologías como CPUs con IA y pantallas avanzadas. Aprende a identificar tus necesidades y a elegir el dispositivo perfecto sin sentirte abrumado por los datos técnicos.'
 featuredImage: 'https://m.media-amazon.com/images/I/61F42+I6LgL._AC_SX522_.jpg'
 category: 'GUÍA DE COMPRA'

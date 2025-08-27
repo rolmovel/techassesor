@@ -2,7 +2,7 @@
 title: "Guía Completa para Comprar la Consola de Videojuegos Perfecta"
 summary: "Descubre cómo elegir la consola de videojuegos ideal según tus gustos, presupuesto y estilo de juego con esta guía actualizada."
 date: "2025-06-22"
-author: "Equipo TechAsesor"
+author: "Equipo Triveo"
 category: "GUÍA DE COMPRA"
 featuredImage: "https://m.media-amazon.com/images/I/51NbBH89m1L._AC_SX679_.jpg"
 ---

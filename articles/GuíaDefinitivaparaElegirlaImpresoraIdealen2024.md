@@ -2,7 +2,7 @@
 title: "Guía Definitiva para Elegir la Impresora Ideal"
 summary: "Descubre cómo elegir la impresora perfecta según tus necesidades, desde uso doméstico hasta profesional, y qué tecnologías están dominando el mercado."
 date: "2024-06-24"
-author: "Equipo TechAsesor"
+author: "Equipo Triveo"
 category: "GUÍA DE COMPRA"
 featuredImage: "https://m.media-amazon.com/images/I/51NbBH89m1L._AC_SX679_.jpg"
 ---
