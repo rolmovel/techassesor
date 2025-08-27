@@ -1,6 +1,6 @@
 ---
-title: "Guía Definitiva para Elegir la Impresora Ideal en 2024"
-summary: "Descubre cómo elegir la impresora perfecta según tus necesidades, desde uso doméstico hasta profesional, y qué tecnologías están dominando el mercado en 2024."
+title: "Guía Definitiva para Elegir la Impresora Ideal"
+summary: "Descubre cómo elegir la impresora perfecta según tus necesidades, desde uso doméstico hasta profesional, y qué tecnologías están dominando el mercado."
 date: "2024-06-24"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"

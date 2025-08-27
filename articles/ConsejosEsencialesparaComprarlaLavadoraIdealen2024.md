@@ -1,7 +1,7 @@
 ---
-title: "Consejos Esenciales para Comprar la Lavadora Ideal en 2024"
+title: "Consejos Esenciales para Comprar la Lavadora Ideal"
 summary: "Descubre los factores clave para elegir la lavadora perfecta según tus necesidades, y optimiza tu inversión con estos prácticos consejos de compra."
-date: "2024-06-20"
+date: "2025-08-27"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"
 featuredImage: "public/images/consejos-compra-lavadoras.png"
