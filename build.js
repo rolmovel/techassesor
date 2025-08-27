@@ -17,7 +17,7 @@ const blogTemplate = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - TechAsesor</title>
+    <title>Blog - Triveo</title>
     <meta name="description" content="Consejos, guías y noticias del mundo de la tecnología de la mano de expertos.">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -59,7 +59,7 @@ const blogTemplate = `
 <body class="bg-slate-50 text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <a href="/index.html" class="inline-flex items-center" aria-label="Inicio"><img src="/images/triveo-logo.png" alt="Triveo" class="h-8 w-auto" /></a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
                 <a href="/blog.html" class="font-semibold text-blue-600">Blog</a>
@@ -90,7 +90,7 @@ const blogTemplate = `
     </main>
     <footer class="bg-white border-t border-slate-200 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
-            &copy; ${new Date().getFullYear()} TechAsesor. Todos los derechos reservados.
+            &copy; ${new Date().getFullYear()} Triveo. Todos los derechos reservados.
         </div>
     </footer>
     <script>
@@ -108,7 +108,7 @@ const articleTemplate = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}} - TechAsesor</title>
+    <title>{{TITLE}} - Triveo</title>
     <meta name="description" content="{{SUMMARY}}">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -135,7 +135,7 @@ const articleTemplate = `
 <body class="bg-white text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/index.html" class="text-2xl font-bold text-slate-900">Tech<span class="text-blue-600">Asesor</span></a>
+            <a href="/index.html" class="inline-flex items-center" aria-label="Inicio"><img src="/images/triveo-logo.png" alt="Triveo" class="h-8 w-auto" /></a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="/index.html" class="text-slate-600 hover:text-blue-600 transition-colors">Inicio</a>
                 <a href="/blog.html" class="text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
@@ -161,7 +161,7 @@ const articleTemplate = `
     </main>
     <footer class="bg-slate-50 border-t border-slate-200 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
-            &copy; ${new Date().getFullYear()} TechAsesor. Todos los derechos reservados.
+            &copy; ${new Date().getFullYear()} Triveo. Todos los derechos reservados.
         </div>
     </footer>
     <script>
