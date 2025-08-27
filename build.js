@@ -114,6 +114,23 @@ const articleTemplate = `
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <style type="text/tailwindcss">
+      .product-card {
+        @apply my-8 flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200/80 transition-all duration-300 hover:shadow-xl hover:ring-2 hover:ring-blue-500/50;
+      }
+      .product-image {
+        @apply w-full md:w-48 h-48 object-contain p-4 bg-white;
+      }
+      .product-content {
+        @apply p-6 flex-grow;
+      }
+      .product-title {
+        @apply text-xl font-bold text-slate-800;
+      }
+      .product-button {
+        @apply mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition-transform duration-200 ease-in-out transform hover:scale-105;
+      }
+    </style>
 </head>
 <body class="bg-white text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">

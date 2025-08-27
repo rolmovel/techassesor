@@ -23,6 +23,15 @@ La CPU es el motor de tu portátil. Determina la velocidad y la capacidad de res
 
 - **El Nómada Digital:** Tu prioridad es la batería y la portabilidad.
   - *Opción 1 (Windows):* Un portátil con **Qualcomm Snapdragon X** te dará días de autonomía.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/61kvh6gi+hL._AC_SX679_.jpg" alt="ASUS Zenbook A14 OLED" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Nombre del Producto</h3>
+    <a href="https://amzn.to/4g1UsAU" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
   - *Opción 2 (macOS):* Un **MacBook Air con chip M4** es tu mejor aliado.
 - **El Profesional Versátil:** Necesitas un equilibrio entre rendimiento, batería y compatibilidad para trabajar.
   - *Opción 1 (Intel):* Un ultraligero con **Intel Core Ultra 200U (Lunar Lake)** te dará eficiencia y la tranquilidad de la compatibilidad x86.
