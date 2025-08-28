@@ -64,10 +64,10 @@ Busca modelos con etiqueta energética clase **A+++ o superior**, que consumen m
 - Necesidad de gran capacidad y zonas diferenciadas para almacenar variedad de alimentos.
 - Recomendación: Modelos **French Door** o **Side by Side** con dispensador y sistemas de control de humedad.
 <div class="product-card">
-  <img src="https://m.media-amazon.com/images/I/41SIyy0lOSL._AC_SX679_.jpg" alt="Corberó - Frigorífico Combi | CCM18824NFX" class="product-image">
+  <img src="https://m.media-amazon.com/images/I/41AWeeZ7AiL._AC_SX679_.jpg" alt="Corberó - Frigorífico Combi 293L" class="product-image">
   <div class="product-content">
-    <h3 class="product-title">Corberó - Frigorífico Combi | CCM18824NFX</h3>
-    <a href="https://amzn.to/4fXWm5d" target="_blank" rel="noopener noreferrer" class="product-button">
+    <h3 class="product-title">Corberó - Frigorífico Combi 293L</h3>
+    <a href="https://amzn.to/4mz8dcp" target="_blank" rel="noopener noreferrer" class="product-button">
       Ver en Amazon
     </a>
   </div>
