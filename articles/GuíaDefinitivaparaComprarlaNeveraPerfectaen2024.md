@@ -1,5 +1,5 @@
 ---
-title: "Guía Definitiva para Comprar la Nevera Perfecta en 2024"
+title: "Guía Definitiva para Comprar la Nevera Perfecta"
 summary: "Explora las características clave para elegir la nevera adecuada según tu estilo de vida, necesidades de espacio y presupuesto."
 date: "2025-08-28"
 author: "Equipo TechAsesor"
