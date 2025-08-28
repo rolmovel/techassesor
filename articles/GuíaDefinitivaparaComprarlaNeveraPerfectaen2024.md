@@ -4,7 +4,7 @@ summary: "Explora las características clave para elegir la nevera adecuada seg�
 date: "2025-08-28"
 author: "Equipo TechAsesor"
 category: "GUÍA DE COMPRA"
-featuredImage: "public/images/modern-fridge-kitchen.png"
+featuredImage: "https://m.media-amazon.com/images/I/41SIyy0lOSL._AC_SX679_.jpg"
 ---
 
 ## Cómo Elegir la Nevera Ideal para tu Hogar
@@ -49,11 +49,29 @@ Busca modelos con etiqueta energética clase **A+++ o superior**, que consumen m
 
 - Prioridad en tamaño compacto y eficiencia energética.
 - Recomendación: Neveras **No Frost de 200 a 300 litros**, preferiblemente con tecnología inverter para ahorro.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/713guEKNwxL._AC_SX522_.jpg" alt="Exquisit® Frigorífico Combi" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Exquisit® Frigorífico Combi</h3>
+    <a href="https://amzn.to/4g0FH12" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### La Familia Tradicional
 
 - Necesidad de gran capacidad y zonas diferenciadas para almacenar variedad de alimentos.
 - Recomendación: Modelos **French Door** o **Side by Side** con dispensador y sistemas de control de humedad.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/41SIyy0lOSL._AC_SX679_.jpg" alt="Corberó - Frigorífico Combi | CCM18824NFX" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Corberó - Frigorífico Combi | CCM18824NFX</h3>
+    <a href="https://amzn.to/4fXWm5d" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### El Cocinero Entusiasta
 
@@ -64,6 +82,15 @@ Busca modelos con etiqueta energética clase **A+++ o superior**, que consumen m
 
 - Prioridad en medidas ajustadas sin sacrificar capacidad.
 - Recomendación: Refrigeradores compactos o modelos verticales estrechos de alta capacidad.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71aOilpMB3L._AC_SX522_.jpg" alt="Oslghy Frigorífico Mini 92L" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Oslghy Frigorífico Mini 92L</h3>
+    <a href="https://amzn.to/3JVSYfa" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ## Conclusión
 
