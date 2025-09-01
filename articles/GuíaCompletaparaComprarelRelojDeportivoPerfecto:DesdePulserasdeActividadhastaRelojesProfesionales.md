@@ -1,10 +1,10 @@
 ---
 title: "Guía Completa para Comprar el Reloj Deportivo Perfecto: Desde Pulseras de Actividad hasta Relojes Profesionales"
 summary: "Descubre cómo elegir el reloj deportivo ideal según tu nivel y necesidades, desde dispositivos básicos hasta relojes avanzados para profesionales del deporte."
-date: "2024-06-16"
-author: "Equipo TechAsesor"
+date: "2025-09-01"
+author: "Equipo Triveo"
 category: "GUÍA DE COMPRA"
-featuredImage: "public/images/relojes-deportivos-guia.png"
+featuredImage: "https://m.media-amazon.com/images/I/71tgZxDP-6L._AC_SX679_.jpg"
 ---
 
 ## Encuentra el reloj deportivo perfecto para tu estilo de vida activo
@@ -45,6 +45,15 @@ Si buscas mejorar tu salud y registrar tu actividad diaria sin complicaciones, u
 - **Precio accesible.**
 
 Recomendación: modelos como **Xiaomi Mi Band** o **Fitbit Inspire** ofrecen buen rendimiento para empezar.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51756XmmP7L._AC_SY300_SX300_QL70_ML2_.jpg" alt="XIAOMI Redmi Watch 5 Active" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">XIAOMI Redmi Watch 5 Active</h3>
+    <a href="https://amzn.to/3HUFMH0" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### El Deportista Casual
 
@@ -56,7 +65,15 @@ Practicas deportes regularmente y quieres datos fiables para progresar. Un **rel
 - **Resistencia al agua para natación.**
 
 Recomendación: opciones como el **Garmin Forerunner 45** o el **Polar Ignite** son una excelente elección.
-
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/41CeecXWRGL._AC_SX300_SY300_QL70_ML2_.jpg" alt="Garmin Forerunner 45" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Garmin Forerunner 45</h3>
+    <a href="https://amzn.to/4lWXWWu" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 ### El Atleta o Profesional del Deporte
 
 Buscas maximizar tu rendimiento con métricas avanzadas. Un **reloj profesional** debe incluir:
@@ -68,7 +85,15 @@ Buscas maximizar tu rendimiento con métricas avanzadas. Un **reloj profesional*
 - **Resistencia a condiciones extremas y batería de larga duración.**
 
 Recomendación: modelos como el **Garmin Fenix 7** o el **Coros Apex Pro** lideran esta categoría.
-
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/71tgZxDP-6L._AC_SX679_.jpg" alt="COROS Apex 2 Pro Reloj GPS Outdoor" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">COROS Apex 2 Pro Reloj GPS Outdoor</h3>
+    <a href="https://amzn.to/3JDK8Tn" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 ## Más consejos para tu compra
 
 - **Compatibilidad:** Verifica que el reloj funcione bien con tu smartphone y las apps que usas.
