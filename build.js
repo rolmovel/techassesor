@@ -308,25 +308,81 @@ async function buildSite() {
     
     console.log(`🏠 Procesando la página de inicio: index.html...`);
     let indexHtml = await fs.readFile('index.html', 'utf-8');
-    const latestArticle = articlesData[0];
+    const latestThree = articlesData.slice(0, 3);
 
-    if (latestArticle) {
-      const latestArticleHtml = `
-      <a href="${latestArticle.url}" class="block max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
+    if (latestThree.length > 0) {
+      const slides = latestThree.map((a, i) => `
+        <a href="${a.url}" class="carousel-slide min-w-full block bg-white rounded-lg shadow-md overflow-hidden md:flex group ring-1 ring-slate-200/50 hover:ring-blue-500/50 transition-all duration-300">
           <div class="md:w-1/3">
-              <img class="h-48 w-full object-cover md:h-full" src="${latestArticle.featuredImage}" alt="Imagen para ${latestArticle.title}">
+            <img class="h-36 w-full object-cover md:h-40" src="${a.featuredImage}" alt="Imagen para ${a.title}">
           </div>
-          <div class="p-8 md:w-2/3 flex flex-col justify-center">
-              <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">${latestArticle.category}</div>
-              <h3 class="mt-1 text-2xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">${latestArticle.title}</h3>
-              <p class="mt-2 text-slate-600">${latestArticle.summary}</p>
-              <div class="mt-4 text-sm text-slate-500">
-                  <span>Por ${latestArticle.author}</span> &bull;
-                  <time datetime="${latestArticle.date}">${new Date(latestArticle.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-              </div>
+          <div class="p-5 md:w-2/3 flex flex-col justify-center">
+            <div class="uppercase tracking-wide text-xs text-blue-600 font-semibold">${a.category || 'Artículo'}</div>
+            <h3 class="mt-1 text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">${a.title}</h3>
+            <p class="mt-2 text-slate-600 text-sm">${a.summary}</p>
+            <div class="mt-3 text-xs text-slate-500">
+              <span>Por ${a.author}</span> &bull;
+              <time datetime="${a.date}">${new Date(a.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            </div>
           </div>
-      </a>`;
-      indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, latestArticleHtml);
+        </a>
+      `).join('');
+
+      const indicators = latestThree.map((_, i) => `
+        <button data-idx="${i}" class="w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-blue-600' : 'bg-slate-300'}"></button>
+      `).join('');
+
+      const carouselHtml = `
+      <div class="relative max-w-3xl mx-auto px-4 md:px-8 overflow-hidden" id="latest-carousel">
+        <div id="carousel-track" class="flex transition-transform duration-300 ease-in-out" style="transform: translateX(0);">
+          ${slides}
+        </div>
+        <button id="carousel-prev" aria-label="Anterior" class="absolute z-10 left-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur border border-slate-200 rounded-full w-8 h-8 grid place-items-center shadow hover:shadow-md">
+          <span class="sr-only">Anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button id="carousel-next" aria-label="Siguiente" class="absolute z-10 right-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur border border-slate-200 rounded-full w-8 h-8 grid place-items-center shadow hover:shadow-md">
+          <span class="sr-only">Siguiente</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <div id="carousel-indicators" class="absolute left-1/2 -translate-x-1/2 bottom-2 flex items-center gap-1.5">
+          ${indicators}
+        </div>
+      </div>
+      <script>(function(){
+        const container = document.getElementById('latest-carousel');
+        const track = document.getElementById('carousel-track');
+        const prev = document.getElementById('carousel-prev');
+        const next = document.getElementById('carousel-next');
+        const dotsWrap = document.getElementById('carousel-indicators');
+        const dots = Array.from(dotsWrap.querySelectorAll('button'));
+        const slides = track.children.length;
+        let idx = 0;
+        function update(){
+          const items = Array.from(track.children);
+          const target = items[idx];
+          const padLeft = parseFloat(getComputedStyle(container).paddingLeft) || 0;
+          const offset = target.offsetLeft - padLeft;
+          track.style.transform = 'translateX(' + (-offset) + 'px)';
+          // Hide non-active fully
+          items.forEach((el, i) => {
+            const active = i === idx;
+            el.style.opacity = active ? '1' : '0';
+            el.style.visibility = active ? 'visible' : 'hidden';
+            el.style.pointerEvents = active ? 'auto' : 'none';
+            el.style.transform = active ? 'scale(1)' : 'scale(0.98)';
+          });
+          dots.forEach((d,i)=>{ d.classList.toggle('bg-blue-600', i===idx); d.classList.toggle('bg-slate-300', i!==idx); });
+        }
+        prev.addEventListener('click', ()=>{ idx = (idx - 1 + slides) % slides; update(); });
+        next.addEventListener('click', ()=>{ idx = (idx + 1) % slides; update(); });
+        dots.forEach((d)=> d.addEventListener('click', ()=>{ idx = Number(d.dataset.idx)||0; update(); }));
+        // Auto-advance every 7s
+        setInterval(()=>{ idx = (idx + 1) % slides; update(); }, 7000);
+        update();
+      })();</script>`;
+
+      indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, carouselHtml);
     } else {
       indexHtml = indexHtml.replace(/<div id="latest-article-placeholder"><\/div>/g, '<p class="text-center text-slate-500">No hay artículos disponibles en este momento.</p>');
     }
