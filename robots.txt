@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay opcional (comentado). Descomenta si lo necesitas.
+# Crawl-delay: 5
+
+Sitemap: https://triveo.es/sitemap.xml
