@@ -184,6 +184,7 @@ const articleTemplate = `
 
 async function buildSite() {
   const BASE_URL = 'https://techassesor.vercel.app';
+  const SITEMAP_BASE = 'https://triveo.es';
 
   const toAbsolute = (p) => {
     const assetPath = p.trim().replace(/^\/?public\//, '');
@@ -346,6 +347,55 @@ async function buildSite() {
       console.warn('  -> ⚠️ Advertencia: La variable N8N_WEBHOOK_URL no fue encontrada. El chat no funcionará.');
     } else {
       console.log('  -> ✅ Variable N8N_WEBHOOK_URL inyectada correctamente.');
+    }
+
+    // Generar automáticamente sitemap.xml a partir de los HTML en dist
+    console.log('🗺️ Generando sitemap.xml automáticamente...');
+    async function listHtmlFiles(dir) {
+      const entries = await fs.readdir(dir);
+      const results = [];
+      for (const entry of entries) {
+        const full = path.join(dir, entry);
+        const stat = await fs.stat(full);
+        if (stat.isDirectory()) {
+          results.push(...(await listHtmlFiles(full)));
+        } else if (path.extname(entry) === '.html') {
+          results.push(full);
+        }
+      }
+      return results;
+    }
+
+    const htmlFiles = await listHtmlFiles(PATHS.DIST);
+    const urlEntries = [];
+    for (const filePath of htmlFiles) {
+      const rel = path.relative(PATHS.DIST, filePath).replace(/\\/g, '/');
+      let loc = '/' + rel;
+      if (rel === 'index.html') {
+        loc = '/';
+      }
+      const stat = await fs.stat(filePath);
+      const lastmod = stat.mtime.toISOString().slice(0, 10);
+      urlEntries.push({ loc: `${SITEMAP_BASE}${loc}`, lastmod });
+    }
+
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries
+      .map(u => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`)
+      .join('\n')}\n</urlset>\n`;
+
+    // Escribimos en dist y también actualizamos el de la raíz
+    await fs.writeFile(path.join(PATHS.DIST, 'sitemap.xml'), sitemapXml);
+    await fs.writeFile(path.join(__dirname, 'sitemap.xml'), sitemapXml);
+    console.log('  -> sitemap.xml generado en dist/ y actualizado en la raíz.');
+
+    // Copiar robots.txt desde la raíz a dist
+    console.log('🤖 Copiando robots.txt...');
+    const rootRobots = path.join(__dirname, 'robots.txt');
+    if (await fs.pathExists(rootRobots)) {
+      await fs.copy(rootRobots, path.join(PATHS.DIST, 'robots.txt'));
+      console.log('  -> robots.txt copiado a dist/');
+    } else {
+      console.warn('  -> ⚠️ No se encontró robots.txt en la raíz.');
     }
 
     console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
