@@ -74,6 +74,7 @@ Recomendación: opciones como el **Garmin Forerunner 45** o el **Polar Ignite** 
     </a>
   </div>
 </div>  
+
 ### El Atleta o Profesional del Deporte
 
 Buscas maximizar tu rendimiento con métricas avanzadas. Un **reloj profesional** debe incluir:
@@ -93,7 +94,8 @@ Recomendación: modelos como el **Garmin Fenix 7** o el **Coros Apex Pro** lider
       Ver en Amazon
     </a>
   </div>
-</div>  
+</div> 
+
 ## Más consejos para tu compra
 
 - **Compatibilidad:** Verifica que el reloj funcione bien con tu smartphone y las apps que usas.
