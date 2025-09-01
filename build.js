@@ -398,6 +398,16 @@ async function buildSite() {
       console.warn('  -> ⚠️ No se encontró robots.txt en la raíz.');
     }
 
+    // Copiar BingSiteAuth.xml desde la raíz a dist
+    console.log('🪟 Copiando BingSiteAuth.xml...');
+    const rootBing = path.join(__dirname, 'BingSiteAuth.xml');
+    if (await fs.pathExists(rootBing)) {
+      await fs.copy(rootBing, path.join(PATHS.DIST, 'BingSiteAuth.xml'));
+      console.log('  -> BingSiteAuth.xml copiado a dist/');
+    } else {
+      console.warn('  -> ⚠️ No se encontró BingSiteAuth.xml en la raíz.');
+    }
+
     console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
   } catch (error) {
     console.error('❌ Error durante el proceso de compilación:', error);
