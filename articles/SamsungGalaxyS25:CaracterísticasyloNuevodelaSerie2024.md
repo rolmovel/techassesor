@@ -1,15 +1,15 @@
 ---
 title: "Samsung Galaxy S25: Características y lo Nuevo de la Serie 2024"
-summary: "Descubre las características principales del nuevo Samsung Galaxy S25, su diseño, rendimiento y tecnologías destacadas que lo posicionan como uno de los smartphones más avanzados de 2024."
-date: "2025-09-01T08:46:16.671-04:00"
+summary: "Descubre las características principales del nuevo Samsung Galaxy S25, su diseño, rendimiento y tecnologías destacadas que lo posicionan como uno de los smartphones más avanzados."
+date: "2025-09-02"
 author: "Equipo Triveo"
-category: "GUÍA DE COMPRA"
-featuredImage: "public/images/samsung-galaxy-s25-series.png"
+category: "PRODUCTO"
+featuredImage: "https://m.media-amazon.com/images/I/51oE31kaHNL._AC_SX679_.jpg"
 ---
 
 ## Samsung Galaxy S25: Innovación y Potencia en la Gama Alta 2024
 
-Samsung ha anunciado su nueva serie Galaxy S25, su smartphone bandera para 2024, con tres modelos que se adaptan a distintos tipos de usuarios y necesidades: el **Galaxy S25**, el **Galaxy S25+** y el **Galaxy S25 Ultra**. Estos dispositivos incorporan mejoras importantes en diseño, rendimiento, cámaras y funcionalidades basadas en inteligencia artificial (IA), apuntando a mantener la supremacía de Samsung en el segmento premium.
+Samsung ha anunciado su nueva serie Galaxy S25, su smartphone bandera, con tres modelos que se adaptan a distintos tipos de usuarios y necesidades: el **Galaxy S25**, el **Galaxy S25+** y el **Galaxy S25 Ultra**. Estos dispositivos incorporan mejoras importantes en diseño, rendimiento, cámaras y funcionalidades basadas en inteligencia artificial (IA), apuntando a mantener la supremacía de Samsung en el segmento premium.
 
 A continuación, te cuento las principales características, novedades y qué lo hace especial sobre otras opciones en el mercado.
 
@@ -52,18 +52,45 @@ El S25 Ultra también destaca por funciones inteligentes que lo hacen un asisten
 - **Ideal para:** Quienes prefieren un teléfono pequeño pero potente.
 - **Características clave:** Pantalla FHD+ de 6.2", diseño ligero, cámara versátil con buen rendimiento en foto y video.
 - **Uso típico:** Navegación, redes sociales, multimedia y productividad básica.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51oE31kaHNL._AC_SX679_.jpg" alt="Samsung Galaxy S25 256GB" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Samsung Galaxy S25 256GB</h3>
+    <a href="https://amzn.to/4n32bRo" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### El Usuario Intermedio: Galaxy S25+
 
 - **Ideal para:** Usuarios que quieren más espacio de pantalla sin llegar a un tamaño excesivo.
 - **Características clave:** Pantalla QHD+ de 6.7", equilibrio entre tamaño y funcionalidad.
 - **Uso típico:** Consumo de contenido audiovisual, fotografía avanzada, trabajo remoto.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51eFNmzfuKL._AC_SX679_.jpg" alt="Samsung Galaxy S25+ 256GB" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Samsung Galaxy S25+ 256GB</h3>
+    <a href="https://amzn.to/4g7gfqL" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ### El Usuario Premium y Pro: Galaxy S25 Ultra
 
 - **Ideal para:** Usuarios exigentes que buscan lo último en tecnología móvil.
 - **Características clave:** Cámaras de 200 MP, pantalla curva 6.9" QHD+, materiales premium, IA avanzada.
 - **Uso típico:** Fotografía profesional, juegos de alta gama, productividad intensiva, contenido multimedia en alta calidad.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/51YK-6UpTYL._AC_SX679_.jpg" alt="Samsung Galaxy S25 Ultra" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Samsung Galaxy S25 Ultra</h3>
+    <a href="https://amzn.to/3JB8f5j target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ## Conclusión
 

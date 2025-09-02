@@ -60,6 +60,7 @@ Para facilitar la elección, segmentamos las recomendaciones según distintos pe
     </a>
   </div>
 </div>  
+
 ### El Profesional Oficina
 
 - **Prioridades:** Velocidad, volumen de impresión, calidad en documentos de texto.
