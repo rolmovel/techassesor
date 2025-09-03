@@ -55,6 +55,8 @@ const blogTemplate = `
         @apply text-right;
       }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9359613935782989"
+     crossorigin="anonymous"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
@@ -131,6 +133,8 @@ const articleTemplate = `
         @apply mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition-transform duration-200 ease-in-out transform hover:scale-105;
       }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9359613935782989"
+     crossorigin="anonymous"></script>
 </head>
 <body class="bg-white text-slate-800 font-sans">
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
