@@ -1,15 +1,25 @@
 ---
 title: "Apple Watch SE de 2ª Generación: La Mejor Opción Intermedia en Relojes Inteligentes"
 summary: "Descubre las características, ventajas y para quién es ideal el Apple Watch SE de 2ª generación, una mezcla perfecta entre tecnología, diseño y precio."
-date: "2025-09-03T03:23:09.299-04:00"
+date: "2025-09-03"
 author: "Equipo Triveo"
-category: "ANÁLISIS"
-featuredImage: "public/images/apple-watch-se-2nd-generation.png"
+category: "PRODUCTO"
+featuredImage: "https://m.media-amazon.com/images/I/61tWjcxx9WL._AC_SY300_SX300_QL70_ML2_.jpg"
 ---
 
 ## Introducción
 
 El Apple Watch SE de 2ª generación ha llegado para consolidar su lugar como uno de los relojes inteligentes más interesantes del mercado. Combina muchas de las funciones de sus hermanos mayores, pero a un precio más accesible, orientado a quienes buscan salud, conectividad y rendimiento sin pagar de más. En este artículo, te explicamos todo lo que necesitas saber sobre este dispositivo, sus novedades, y quién puede aprovecharlo al máximo.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/61tWjcxx9WL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Apple Watch Series 8" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Apple Watch Series 8</h3>
+    <a href="https://amzn.to/46jMUpB" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
+
 
 ## ¿Qué es el Apple Watch SE de 2ª generación?
 
