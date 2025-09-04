@@ -15,14 +15,15 @@ const blogTemplate = `
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-  <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-  <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-  <script>
-      window.ezstandalone = window.ezstandalone || {};
-      ezstandalone.cmd = ezstandalone.cmd || [];
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-26DG1RSD11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-26DG1RSD11');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Triveo</title>
@@ -115,14 +116,15 @@ const articleTemplate = `
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-  <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-  <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-  <script>
-      window.ezstandalone = window.ezstandalone || {};
-      ezstandalone.cmd = ezstandalone.cmd || [];
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-26DG1RSD11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-26DG1RSD11');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}} - Triveo</title>
@@ -184,9 +186,6 @@ const articleTemplate = `
                 {{CONTENT}}
             </div>
         </article>
-    <!-- Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
-    <div id="ezoic-pub-ad-placeholder-108"></div>
-    <!-- End Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
     </main>
     <footer class="bg-slate-50 border-t border-slate-200 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
