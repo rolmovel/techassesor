@@ -184,10 +184,10 @@ const articleTemplate = `
                 {{CONTENT}}
             </div>
         </article>
-    </main>
     <!-- Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
     <div id="ezoic-pub-ad-placeholder-108"></div>
     <!-- End Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
+    </main>
     <footer class="bg-slate-50 border-t border-slate-200 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
             &copy; ${new Date().getFullYear()} Triveo. Todos los derechos reservados.
