@@ -185,6 +185,9 @@ const articleTemplate = `
             </div>
         </article>
     </main>
+    <!-- Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
+    <div id="ezoic-pub-ad-placeholder-108"></div>
+    <!-- End Ezoic - sidebar_floating_2 - sidebar_floating_2 -->
     <footer class="bg-slate-50 border-t border-slate-200 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
             &copy; ${new Date().getFullYear()} Triveo. Todos los derechos reservados.
@@ -480,16 +483,6 @@ async function buildSite() {
       console.log('  -> BingSiteAuth.xml copiado a dist/');
     } else {
       console.warn('  -> ⚠️ No se encontró BingSiteAuth.xml en la raíz.');
-    }
-
-    // Copiar ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html desde la raíz a dist
-    console.log('🤖 Copiando ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html...');
-    const rootEzoic = path.join(__dirname, 'ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html');
-    if (await fs.pathExists(rootEzoic)) {
-      await fs.copy(rootEzoic, path.join(PATHS.DIST, 'ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html'));
-      console.log('  -> ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html copiado a dist/');
-    } else {
-      console.warn('  -> ⚠️ No se encontró ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html en la raíz.');
     }
 
     console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
