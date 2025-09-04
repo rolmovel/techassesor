@@ -482,6 +482,16 @@ async function buildSite() {
       console.warn('  -> ⚠️ No se encontró BingSiteAuth.xml en la raíz.');
     }
 
+    // Copiar ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html desde la raíz a dist
+    console.log('🤖 Copiando ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html...');
+    const rootEzoic = path.join(__dirname, 'ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html');
+    if (await fs.pathExists(rootEzoic)) {
+      await fs.copy(rootEzoic, path.join(PATHS.DIST, 'ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html'));
+      console.log('  -> ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html copiado a dist/');
+    } else {
+      console.warn('  -> ⚠️ No se encontró ezoic-ZJcFQvxeqab5L4OAR32TEIAchm3gQj.html en la raíz.');
+    }
+
     console.log(`✅ ¡Compilación completada! El sitio está listo en la carpeta '${PATHS.DIST}'.`);
   } catch (error) {
     console.error('❌ Error durante el proceso de compilación:', error);
