@@ -61,10 +61,10 @@ La EBAU tiene normas claras sobre qué calculadoras están permitidas. Normalmen
 - **Funciones destacadas**: cálculo de matrices, números complejos, integrales y derivadas numéricas.
 - **Ventajas**: pantalla natural que muestra las expresiones como en los libros, funciones estadísticas y convertidor de unidades.
 <div class="product-card">
-  <img src="hthttps://m.media-amazon.com/images/I/712fpuClzyL._AC_SL1500_.jpg" alt="Sharp EL531" class="product-image">
+  <img src="https://m.media-amazon.com/images/I/61byVMBCM4L._AC_SL1024_.jpg" alt="Casio fx-82ES" class="product-image">
   <div class="product-content">
-    <h3 class="product-title">Sharp EL531</h3>
-    <a href="https://amzn.to/46LTrJZ" target="_blank" rel="noopener noreferrer" class="product-button">
+    <h3 class="product-title">Casio fx-82ES</h3>
+    <a href="https://amzn.to/3K5uall" target="_blank" rel="noopener noreferrer" class="product-button">
       Ver en Amazon
     </a>
   </div>
@@ -75,6 +75,15 @@ La EBAU tiene normas claras sobre qué calculadoras están permitidas. Normalmen
 - **Por qué elegirla**: Ofrece más de 300 funciones científicas, con un menú intuitivo y buen soporte para cálculos de estadística y álgebra.
 - **Funciones**: permite cálculo de fracciones, ecuaciones trigonométricas y conversiones.
 - **Ventajas**: ideal para quienes quieren explorara más allá sin complicarse, batería y panel solar combinados.
+<div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/712fpuClzyL._AC_SL1500_.jpg" alt="Sharp EL531" class="product-image">
+  <div class="product-content">
+    <h3 class="product-title">Sharp EL531</h3>
+    <a href="https://amzn.to/421yJDl" target="_blank" rel="noopener noreferrer" class="product-button">
+      Ver en Amazon
+    </a>
+  </div>
+</div>  
 
 ## ¿Qué calculadora elegir según tu perfil como estudiante?
 
